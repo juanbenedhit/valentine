@@ -132,14 +132,25 @@ button {
 }
 
 #follow a{
-    
     text-decoration: none;
     color: pink;
     display: none;
     font-size: 0.7rem;
 } 
 
-@media screen and (max-width: 600px) {
+
+@media screen and (max-width: 580px) {
+    .text p,
+    #more {
+        font-size: 0.7rem;
+    }
+
+    #follow a{
+        font-size: 0.3rem;
+    }
+}
+
+@media screen and (min-width: 599px) and (max-width: 600px) {
     .text p,
     #more {
         font-size: 1rem;
