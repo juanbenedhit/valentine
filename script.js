@@ -1,6 +1,18 @@
 var mysong = document.getElementById("mysong");
 var playbtn = document.getElementById("playbtn");
 var pausebtn = document.getElementById("pausebtn");
+var startTime = 45;
+var endTime = 79;
+
+mysong.volume = 0.2;
+
+mysong.addEventListener("timeupdate", function () {
+  if (mysong.currentTime >= endTime) {
+    mysong.pause();
+    pausebtn.style.display = "none";
+    playbtn.style.display = "block";
+  }
+});
 
 function myFunctionPlaySongShowfollow() {
   myFunction();
@@ -17,6 +29,9 @@ function showfollow() {
 }
 
 function playSong() {
+  if (mysong.currentTime < startTime || mysong.currentTime >= endTime) {
+    mysong.currentTime = startTime;
+  }
   mysong.play();
   pausebtn.style.display = "block";
   playbtn.style.display = "none";
